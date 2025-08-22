@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My First Chatbot</title>
+</head>
+<body>
+    <h3>The Home Page of My First Chatbot</h3>
+    <hr>
+    <form action="/" method="POST">
+        Query: 
+        <br>
+        <textarea name="query" rows="4" cols="30"></textarea>
+        <br>
+        <button>Send</button>
+    </form>
+    <br>
+    <br>
+    <hr>
+    {% if history %}
+        {% for item in history %}
+            {% if item.role == 'user' %}
+                <b>You:</b> {{ item.content }}
+                <br><br>
+            {% elif item.role == 'assistant' %}
+                <b>Bot:</b> {{ item.content }}
+                <br><br>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
