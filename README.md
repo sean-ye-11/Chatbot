@@ -1,5 +1,3 @@
-#Chatbot
-
 **Developer:** Sean Ye
 
 ## Introduction  
